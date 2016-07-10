@@ -1,6 +1,6 @@
 {
   "name": "tiny-sha1",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tiny SHA-1 hasher for Node and browsers",
   "author": "Max Davidson <davidsonmax@gmail.com>",
   "repository": {
