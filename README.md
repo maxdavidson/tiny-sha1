@@ -1,5 +1,11 @@
 # tiny-sha1
 
+[![NPM](https://img.shields.io/npm/v/tiny-sha1.svg)](https://www.npmjs.com/package/tiny-sha1)
+[![Build Status](https://img.shields.io/travis/maxdavidson/tiny-sha1/master.svg)](https://travis-ci.org/maxdavidson/tiny-sha1)
+[![Coverage Status](https://img.shields.io/coveralls/maxdavidson/tiny-sha1/master.svg)](https://coveralls.io/github/maxdavidson/tiny-sha1?branch=master)
+[![Dependency Status](https://img.shields.io/david/maxdavidson/tiny-sha1.svg)](https://david-dm.org/maxdavidson/tiny-sha1)
+[![devDependency Status](https://img.shields.io/david/dev/maxdavidson/tiny-sha1.svg)](https://david-dm.org/maxdavidson/tiny-sha1#info=devDependencies)
+
 A tiny, synchronous implementation of the [SHA-1 hash function](https://en.wikipedia.org/wiki/SHA-1).
 
 Only works on `Uint8Array` for performance and portability reasons.
