@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Tiny SHA-1 hasher for Node and browsers",
   "author": "Max Davidson <davidsonmax@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxdavidson/tiny-sha1.git"
+  },
   "main": "dist/tiny-sha1.js",
   "jsnext:main": "dist/tiny-sha1.mjs",
   "typings": "src/index.d.ts",
