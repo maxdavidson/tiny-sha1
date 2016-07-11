@@ -53,23 +53,26 @@ export default function sha1(bytes) {
 
   const w = new Uint32Array(80);
 
+  /* eslint-disable one-var, one-var-declaration-per-line */
+  let i, a, b, c, d, e, tmp;
+
   for (let offset = 0, len = data.length; offset < len; offset += 16) {
-    for (let i = 0; i < 16; ++i) {
+    for (i = 0; i < 16; ++i) {
       w[i] = data[offset + i];
     }
 
-    for (let i = 16; i < 80; ++i) {
+    for (i = 16; i < 80; ++i) {
       w[i] = rotateLeft(w[i - 3] ^ w[i - 8] ^ w[i - 14] ^ w[i - 16], 1);
     }
 
-    let a = h0;
-    let b = h1;
-    let c = h2;
-    let d = h3;
-    let e = h4;
+    a = h0;
+    b = h1;
+    c = h2;
+    d = h3;
+    e = h4;
 
-    for (let i = 0; i < 20; ++i) {
-      const tmp = (rotateLeft(a, 5) + choice(b, c, d) + e + 0x5a827999 + w[i]) & 0xffffffff;
+    for (i = 0; i < 20; ++i) {
+      tmp = (rotateLeft(a, 5) + choice(b, c, d) + e + 0x5a827999 + w[i]) & 0xffffffff;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -77,8 +80,8 @@ export default function sha1(bytes) {
       a = tmp;
     }
 
-    for (let i = 20; i < 40; ++i) {
-      const tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0x6ed9eba1 + w[i]) & 0xffffffff;
+    for (i = 20; i < 40; ++i) {
+      tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0x6ed9eba1 + w[i]) & 0xffffffff;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -86,8 +89,8 @@ export default function sha1(bytes) {
       a = tmp;
     }
 
-    for (let i = 40; i < 60; ++i) {
-      const tmp = (rotateLeft(a, 5) + majority(b, c, d) + e + 0x8f1bbcdc + w[i]) & 0xffffffff;
+    for (i = 40; i < 60; ++i) {
+      tmp = (rotateLeft(a, 5) + majority(b, c, d) + e + 0x8f1bbcdc + w[i]) & 0xffffffff;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -95,8 +98,8 @@ export default function sha1(bytes) {
       a = tmp;
     }
 
-    for (let i = 60; i < 80; ++i) {
-      const tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0xca62c1d6 + w[i]) & 0xffffffff;
+    for (i = 60; i < 80; ++i) {
+      tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0xca62c1d6 + w[i]) & 0xffffffff;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
