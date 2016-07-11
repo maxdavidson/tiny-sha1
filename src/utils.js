@@ -22,3 +22,19 @@ export function hexify(n) {
   }
   return s;
 }
+
+export function choice(x, y, z) {
+  return (x & y) ^ (~x & z);
+}
+
+export function parity(x, y, z) {
+  return x ^ y ^ z;
+}
+
+export function majority(x, y, z) {
+  return (x & y) ^ (x & z) ^ (y & z);
+}
+
+export function rotateLeft(value, bits) {
+  return (value << bits) | (value >>> (32 - bits));
+}

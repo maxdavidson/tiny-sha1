@@ -1,20 +1,7 @@
-import { systemLittleEndian, swap4, align, hexify } from './utils';
-
-function choice(x, y, z) {
-  return (x & y) ^ (~x & z);
-}
-
-function parity(x, y, z) {
-  return x ^ y ^ z;
-}
-
-function majority(x, y, z) {
-  return (x & y) ^ (x & z) ^ (y & z);
-}
-
-function rotateLeft(value, bits) {
-  return (value << bits) | (value >>> (32 - bits));
-}
+import {
+  systemLittleEndian, swap4, align, hexify,
+  choice, majority, parity, rotateLeft,
+} from './utils';
 
 export default function sha1(bytes) {
   if (!(bytes instanceof Uint8Array)) {
