@@ -16,9 +16,6 @@ function rotateLeft(value, bits) {
   return (value << bits) | (value >>> (32 - bits));
 }
 
-const functions = [choice, parity, majority, parity];
-const constants = [0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xca62c1d6];
-
 export default function sha1(bytes) {
   if (!(bytes instanceof Uint8Array)) {
     throw new TypeError('Input data must be a Uint8Array.');
@@ -71,9 +68,35 @@ export default function sha1(bytes) {
     let d = h3;
     let e = h4;
 
-    for (let i = 0; i < 80; ++i) {
-      const s = (i / 20) >>> 0;
-      const tmp = (rotateLeft(a, 5) + functions[s](b, c, d) + e + constants[s] + w[i]) & 0xffffffff;
+    for (let i = 0; i < 20; ++i) {
+      const tmp = (rotateLeft(a, 5) + choice(b, c, d) + e + 0x5a827999 + w[i]) & 0xffffffff;
+      e = d;
+      d = c;
+      c = rotateLeft(b, 30);
+      b = a;
+      a = tmp;
+    }
+
+    for (let i = 20; i < 40; ++i) {
+      const tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0x6ed9eba1 + w[i]) & 0xffffffff;
+      e = d;
+      d = c;
+      c = rotateLeft(b, 30);
+      b = a;
+      a = tmp;
+    }
+
+    for (let i = 40; i < 60; ++i) {
+      const tmp = (rotateLeft(a, 5) + majority(b, c, d) + e + 0x8f1bbcdc + w[i]) & 0xffffffff;
+      e = d;
+      d = c;
+      c = rotateLeft(b, 30);
+      b = a;
+      a = tmp;
+    }
+
+    for (let i = 60; i < 80; ++i) {
+      const tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0xca62c1d6 + w[i]) & 0xffffffff;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
