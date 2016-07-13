@@ -59,7 +59,7 @@ export default function sha1(bytes) {
     e = h4;
 
     for (i = 0; i < 20; ++i) {
-      tmp = (rotateLeft(a, 5) + choice(b, c, d) + e + 0x5a827999 + w[i]) & 0xffffffff;
+      tmp = (rotateLeft(a, 5) + choice(b, c, d) + e + 0x5a827999 + w[i]) | 0;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -68,7 +68,7 @@ export default function sha1(bytes) {
     }
 
     for (i = 20; i < 40; ++i) {
-      tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0x6ed9eba1 + w[i]) & 0xffffffff;
+      tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0x6ed9eba1 + w[i]) | 0;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -77,7 +77,7 @@ export default function sha1(bytes) {
     }
 
     for (i = 40; i < 60; ++i) {
-      tmp = (rotateLeft(a, 5) + majority(b, c, d) + e + 0x8f1bbcdc + w[i]) & 0xffffffff;
+      tmp = (rotateLeft(a, 5) + majority(b, c, d) + e + 0x8f1bbcdc + w[i]) | 0;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -86,7 +86,7 @@ export default function sha1(bytes) {
     }
 
     for (i = 60; i < 80; ++i) {
-      tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0xca62c1d6 + w[i]) & 0xffffffff;
+      tmp = (rotateLeft(a, 5) + parity(b, c, d) + e + 0xca62c1d6 + w[i]) | 0;
       e = d;
       d = c;
       c = rotateLeft(b, 30);
@@ -94,11 +94,11 @@ export default function sha1(bytes) {
       a = tmp;
     }
 
-    h0 = (h0 + a) & 0xffffffff;
-    h1 = (h1 + b) & 0xffffffff;
-    h2 = (h2 + c) & 0xffffffff;
-    h3 = (h3 + d) & 0xffffffff;
-    h4 = (h4 + e) & 0xffffffff;
+    h0 = (h0 + a) | 0;
+    h1 = (h1 + b) | 0;
+    h2 = (h2 + c) | 0;
+    h3 = (h3 + d) | 0;
+    h4 = (h4 + e) | 0;
   }
 
   return `${hexify(h0)}${hexify(h1)}${hexify(h2)}${hexify(h3)}${hexify(h4)}`;
