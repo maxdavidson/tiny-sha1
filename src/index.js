@@ -3,6 +3,8 @@ import {
   choice, majority, parity, rotateLeft,
 } from './utils';
 
+const w = new Uint32Array(80);
+
 export default function sha1(bytes) {
   if (!(bytes instanceof Uint8Array)) {
     throw new TypeError('Input data must be a Uint8Array.');
@@ -37,8 +39,6 @@ export default function sha1(bytes) {
   let h2 = 0x98badcfe;
   let h3 = 0x10325476;
   let h4 = 0xc3d2e1f0;
-
-  const w = new Uint32Array(80);
 
   /* eslint-disable one-var, one-var-declaration-per-line */
   let i, a, b, c, d, e, tmp;
