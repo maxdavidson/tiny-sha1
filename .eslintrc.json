@@ -3,6 +3,7 @@
   "extends": "airbnb-base",
   "parser": "babel-eslint",
   "rules": {
-    "no-bitwise": 0
+    "no-bitwise": 0,
+    "no-plusplus": 0
   }
 }
