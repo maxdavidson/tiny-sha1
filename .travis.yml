@@ -3,9 +3,8 @@ node_js:
   - 4
   - 5
   - 6
-after_success:
-  - npm i -g coveralls
-  - cat coverage/lcov.info | coveralls
 cache:
   directories:
     - node_modules
+after_success:
+  - npm run coveralls
