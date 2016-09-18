@@ -8,7 +8,8 @@
     "url": "https://github.com/maxdavidson/tiny-sha1.git"
   },
   "main": "dist/tiny-sha1.js",
-  "jsnext:main": "dist/tiny-sha1.mjs",
+  "module": "dist/tiny-sha1.es.js",
+  "jsnext:main": "dist/tiny-sha1.es.js",
   "typings": "src/index.d.ts",
   "license": "MIT",
   "engines": {

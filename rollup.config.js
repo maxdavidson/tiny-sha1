@@ -11,6 +11,6 @@ export default {
   ],
   targets: [
     { dest: 'dist/tiny-sha1.js', format: 'umd' },
-    { dest: 'dist/tiny-sha1.mjs', format: 'es' },
+    { dest: 'dist/tiny-sha1.es.js', format: 'es' },
   ],
 };
