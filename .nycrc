@@ -1,8 +1,7 @@
 {
   "reporter": [
     "html",
-    "text",
-    "lcov"
+    "text"
   ],
   "sourceMap": false,
   "instrument": false
