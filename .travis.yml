@@ -6,3 +6,6 @@ node_js:
 after_success:
   - npm i -g coveralls
   - cat coverage/lcov.info | coveralls
+cache:
+  directories:
+    - node_modules
