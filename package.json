@@ -28,8 +28,7 @@
     "clean": "rimraf dist coverage .nyc_output",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "nyc ava",
-    "test:coveralls": "nyc report -r text-lcov | coveralls",
+    "test": "cross-env NODE_ENV=test nyc ava",
     "prebuild": "npm run clean",
     "pretest": "cross-env NODE_ENV=test npm run build",
     "posttest": "npm run lint",
@@ -48,15 +47,13 @@
     "babel-plugin-external-helpers": "^6.8.0",
     "babel-plugin-istanbul": "^2.0.0",
     "babel-preset-latest": "^6.14.0",
-    "coveralls": "^2.11.9",
     "cross-env": "^2.0.0",
     "eslint": "^3.0.0",
     "eslint-config-airbnb-base": "^7.0.0",
     "eslint-plugin-import": "^1.15.0",
-    "nyc": "^8.0.0",
+    "nyc": "^8.3.0",
     "rimraf": "^2.5.2",
     "rollup": "^0.35.7",
-    "rollup-plugin-babel": "^2.6.1",
-    "rollup-watch": "^2.4.0"
+    "rollup-plugin-babel": "^2.6.1"
   }
 }
