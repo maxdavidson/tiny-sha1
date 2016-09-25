@@ -41,7 +41,8 @@
     "dist"
   ],
   "ava": {
-    "require": "babel-register"
+    "require": "babel-register",
+    "babel": "inherit"
   },
   "devDependencies": {
     "ava": "^0.16.0",
