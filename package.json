@@ -10,7 +10,7 @@
   "main": "dist/tiny-sha1.js",
   "module": "dist/tiny-sha1.es.js",
   "jsnext:main": "dist/tiny-sha1.es.js",
-  "typings": "src/index.d.ts",
+  "typings": "typings.d.ts",
   "license": "MIT",
   "engines": {
     "node": ">=4.5.0",
@@ -37,7 +37,7 @@
     "postversion": "git push && git push --tags && npm publish"
   },
   "files": [
-    "src/index.d.ts",
+    "typings.d.ts",
     "dist"
   ],
   "ava": {
