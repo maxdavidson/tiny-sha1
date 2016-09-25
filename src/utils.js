@@ -22,7 +22,7 @@ export function getUint8Array(data) {
     return new Uint8Array(data);
   }
 
-  if (data.buffer instanceof ArrayBuffer && typeof data.byteOffset === 'number' && typeof data.byteLength === 'number') {
+  if (ArrayBuffer.isView(data)) {
     const { buffer, byteOffset, byteLength } = data;
     return new Uint8Array(buffer, byteOffset, byteLength);
   }
