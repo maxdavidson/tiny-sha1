@@ -1,14 +1,12 @@
 import {
-  systemLittleEndian, swap4, align, hexify,
+  systemLittleEndian, getUint8Array, swap4, align, hexify,
   choice, majority, parity, rotateLeft,
 } from './utils';
 
 const w = new Uint32Array(80);
 
-export default function sha1(bytes) {
-  if (!(bytes instanceof Uint8Array)) {
-    throw new TypeError('Input data must be a Uint8Array.');
-  }
+export default function sha1(input) {
+  const bytes = getUint8Array(input);
 
   // Allocate a buffer to fit the message data,
   // the padding byte and the 64-bit message bit length

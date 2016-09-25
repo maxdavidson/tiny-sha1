@@ -1,1 +1,1 @@
-export default function sha1(bytes: Uint8Array): string;
+export default function sha1(input: ArrayBuffer | ArrayBufferView | number[]): string;

@@ -13,6 +13,23 @@ export function align(address, alignment) {
   return (address + tmp) & ~tmp;
 }
 
+export function getUint8Array(data) {
+  if (data instanceof Uint8Array) {
+    return data;
+  }
+
+  if (data instanceof ArrayBuffer || Array.isArray(data)) {
+    return new Uint8Array(data);
+  }
+
+  if (data.buffer instanceof ArrayBuffer && typeof data.byteOffset === 'number' && typeof data.byteLength === 'number') {
+    const { buffer, byteOffset, byteLength } = data;
+    return new Uint8Array(buffer, byteOffset, byteLength);
+  }
+
+  throw new TypeError('Input data must be convertible to Uint8Array');
+}
+
 /** Convert a uint32 to an 8-character big-endian hex string. */
 export function hexify(n) {
   let s = '';
