@@ -1,5 +1,5 @@
 import test from 'ava';
-import sha1 from '../';
+import sha1 from '..';
 import { stringToBuffer, nativeSha1, createRandomUint8Array } from './_helpers';
 
 test('Invalid data should throw type error', t => {
