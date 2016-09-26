@@ -1,7 +1,7 @@
 export const systemLittleEndian =
   new Uint16Array(new Uint8Array([0x7F, 0xFF]).buffer)[0] === 0xFF7F;
 
-export function swap4(num) {
+export function swap32(num) {
   return ((num >> 24) & 0xff)
     | ((num >> 8) & 0xff00)
     | ((num << 8) & 0xff0000)

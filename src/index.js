@@ -1,5 +1,5 @@
 import {
-  systemLittleEndian, getUint8Array, swap4, align, hexify,
+  systemLittleEndian, getUint8Array, swap32, align, hexify,
   choice, majority, parity, rotateLeft,
 } from './utils';
 
@@ -21,7 +21,7 @@ export default function sha1(input) {
   // Swap bytes if neeeded
   if (systemLittleEndian) {
     for (let i = 0, len = data.length; i < len; ++i) {
-      data[i] = swap4(data[i]);
+      data[i] = swap32(data[i]);
     }
   }
 
