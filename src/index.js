@@ -28,7 +28,7 @@ export default function sha1(input) {
   const bitLength = 8 * bytes.byteLength;
 
   // Store the message bit length as a 64-bit value
-  data[data.length - 2] = bitLength / Math.pow(2, 32);
+  data[data.length - 2] = bitLength / (2 ** 32);
   data[data.length - 1] = bitLength;
 
   // Set the initial hash state
