@@ -25,7 +25,7 @@ test('getUint8Array', t => {
 });
 
 for (let i = 0; i < 50; i++) {
-  const length = Math.pow(i, 2.5) | 0;
+  const length = (i ** 2.5) | 0;
   test(`Random data of length: ${length}`, async t => {
     const buffer = await randomBytes(length);
     t.is(sha1(buffer), nativeSha1(buffer));
