@@ -1,5 +1,7 @@
 # tiny-sha1
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/maxdavidson/tiny-sha1.svg)](https://greenkeeper.io/)
+
 [![NPM](https://img.shields.io/npm/v/tiny-sha1.svg)](https://www.npmjs.com/package/tiny-sha1)
 [![Build Status](https://img.shields.io/travis/maxdavidson/tiny-sha1/master.svg)](https://travis-ci.org/maxdavidson/tiny-sha1)
 [![Coverage Status](https://img.shields.io/coveralls/maxdavidson/tiny-sha1/master.svg)](https://coveralls.io/github/maxdavidson/tiny-sha1?branch=master)
